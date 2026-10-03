@@ -1,0 +1,1666 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Contact Us | Smart Marketing & Events – Chennai</title>
+
+  <meta name="description"
+        content="Contact Smart Marketing & Events in Velachery, Chennai for large format printing, sign boards, branding, fabrication and event branding services.">
+
+  <link rel="icon" href="images/logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+
+    /* =========================================
+       CONTACT HERO
+    ========================================= */
+
+    .contact-hero {
+      position: relative;
+      min-height: 430px;
+      display: flex;
+      align-items: center;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(150,25,18,.92),
+          rgba(214,58,47,.65),
+          rgba(214,58,47,.2)
+        ),
+        url('images/contact-banner.jpg') center/cover no-repeat;
+
+      color: var(--white);
+    }
+
+    .contact-hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .contact-hero h1 {
+      font-size: clamp(2.7rem, 6vw, 4.8rem);
+      line-height: 1.05;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .contact-hero p {
+      font-size: 1.2rem;
+      max-width: 650px;
+    }
+
+
+    /* =========================================
+       QUICK CONTACT CARDS
+    ========================================= */
+
+    .quick-contact {
+      margin-top: -55px;
+      position: relative;
+      z-index: 5;
+    }
+
+    .quick-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
+    .quick-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 1.4rem;
+      text-align: center;
+      box-shadow: 0 10px 28px rgba(80,20,15,.18);
+      border-top: 4px solid var(--red);
+    }
+
+    .quick-card .icon {
+      font-size: 1.8rem;
+      margin-bottom: .4rem;
+    }
+
+    .quick-card h3 {
+      color: var(--red);
+      margin-bottom: .3rem;
+    }
+
+    .quick-card p {
+      margin: 0;
+      font-size: .95rem;
+    }
+
+    .quick-card a:hover {
+      color: var(--red);
+      text-decoration: underline;
+    }
+
+
+    /* =========================================
+       CONTACT MAIN
+    ========================================= */
+
+    .contact-section {
+      padding-block: 5rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 2.5rem;
+      align-items: stretch;
+    }
+
+
+    /* =========================================
+       CONTACT INFORMATION
+    ========================================= */
+
+    .contact-info {
+      background: var(--red);
+      color: var(--white);
+      border-radius: 14px;
+      padding: 2.5rem;
+    }
+
+    .contact-info h2 {
+      font-size: 2.1rem;
+      margin-bottom: .8rem;
+    }
+
+    .contact-info-intro {
+      margin-bottom: 2rem;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.6rem;
+      align-items: flex-start;
+    }
+
+    .contact-icon {
+      width: 45px;
+      height: 45px;
+      flex: 0 0 45px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--white);
+      color: var(--red);
+      font-size: 1.15rem;
+    }
+
+    .contact-item h3 {
+      margin-bottom: .2rem;
+    }
+
+    .contact-item p {
+      margin: 0;
+    }
+
+    .contact-item a {
+      color: var(--white);
+    }
+
+    .contact-item a:hover {
+      text-decoration: underline;
+    }
+
+
+    /* =========================================
+       SOCIAL / WHATSAPP BOX
+    ========================================= */
+
+    .whatsapp-box {
+      margin-top: 2rem;
+      padding: 1.2rem;
+      background: rgba(255,255,255,.12);
+      border-radius: 10px;
+    }
+
+    .whatsapp-box h3 {
+      margin-bottom: .3rem;
+    }
+
+    .whatsapp-box p {
+      margin-bottom: 1rem;
+    }
+
+
+    /* =========================================
+       CONTACT FORM
+    ========================================= */
+
+    .contact-form-box {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 2.5rem;
+      box-shadow: 0 12px 30px rgba(120,30,25,.18);
+    }
+
+    .contact-form-box h2 {
+      color: var(--red);
+      font-size: 2.1rem;
+      margin-bottom: .4rem;
+    }
+
+    .contact-form-box > p {
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .contact-form label {
+      display: grid;
+      gap: .35rem;
+      font-weight: 600;
+      font-size: .95rem;
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      font: inherit;
+      padding: .8rem .9rem;
+      border: 2px solid var(--pink-deep);
+      border-radius: 8px;
+      background: var(--white);
+      color: var(--ink);
+      width: 100%;
+    }
+
+    .contact-form input:focus,
+    .contact-form select:focus,
+    .contact-form textarea:focus {
+      border-color: var(--red);
+      outline: none;
+    }
+
+    .contact-form textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+
+    /* =========================================
+       WHY CONTACT US
+    ========================================= */
+
+    .contact-benefits {
+      padding-block: 4.5rem;
+      background: var(--pink-deep);
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem;
+    }
+
+    .benefit-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 1.5rem;
+      border-left: 5px solid var(--red);
+    }
+
+    .benefit-card h3 {
+      color: var(--red);
+      margin-bottom: .5rem;
+    }
+
+    .benefit-card p {
+      margin: 0;
+      font-size: .95rem;
+    }
+
+
+    /* =========================================
+       SERVICES
+    ========================================= */
+
+    .contact-services {
+      padding-block: 4.5rem;
+    }
+
+    .contact-services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+    }
+
+    .contact-service-card {
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 22px rgba(120,30,25,.12);
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .contact-service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 28px rgba(120,30,25,.2);
+    }
+
+    .contact-service-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .contact-service-body {
+      padding: 1.2rem;
+    }
+
+    .contact-service-body h3 {
+      color: var(--red);
+      margin-bottom: .4rem;
+    }
+
+    .contact-service-body p {
+      margin: 0;
+      font-size: .95rem;
+    }
+
+
+    /* =========================================
+       PROCESS
+    ========================================= */
+
+    .contact-process {
+      padding-block: 4.5rem;
+      background: var(--red);
+      color: var(--white);
+    }
+
+    .contact-process .section-title {
+      color: var(--white);
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem;
+    }
+
+    .process-card {
+      position: relative;
+      padding: 1.5rem;
+      background: rgba(255,255,255,.1);
+      border-radius: 12px;
+    }
+
+    .process-number {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--white);
+      color: var(--red);
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+
+    .process-card h3 {
+      margin-bottom: .4rem;
+    }
+
+    .process-card p {
+      margin: 0;
+    }
+
+
+    /* =========================================
+       SERVICE AREAS
+    ========================================= */
+
+    .service-areas {
+      padding-block: 4.5rem;
+    }
+
+    .areas-box {
+      background: var(--pink-deep);
+      border-radius: 14px;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .areas-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: .7rem;
+      margin-top: 1.5rem;
+    }
+
+    .areas-list span {
+      background: var(--white);
+      color: var(--red-dark);
+      font-weight: 600;
+      padding: .55rem 1rem;
+      border-radius: 999px;
+    }
+
+
+    /* =========================================
+       BUSINESS HOURS
+    ========================================= */
+
+    .hours-section {
+      padding-block: 4rem;
+      background: var(--pink-deep);
+    }
+
+    .hours-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: stretch;
+    }
+
+    .hours-card {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 2rem;
+    }
+
+    .hours-card h2 {
+      color: var(--red);
+      margin-bottom: 1rem;
+    }
+
+    .hours-row {
+      display: flex;
+      justify-content: space-between;
+      padding: .8rem 0;
+      border-bottom: 1px solid var(--pink-deep);
+    }
+
+    .hours-row:last-child {
+      border-bottom: 0;
+    }
+
+
+    /* =========================================
+       MAP
+    ========================================= */
+
+    .map-section {
+      padding-block: 4.5rem;
+    }
+
+    .map-container {
+      overflow: hidden;
+      border-radius: 14px;
+      box-shadow: 0 12px 30px rgba(120,30,25,.22);
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 430px;
+      border: 0;
+      display: block;
+    }
+
+
+    /* =========================================
+       FAQ
+    ========================================= */
+
+    .contact-faq {
+      padding-block: 4.5rem;
+      background: var(--pink-deep);
+    }
+
+    .contact-faq-wrap {
+      max-width: 850px;
+      margin-inline: auto;
+    }
+
+    .contact-faq details {
+      background: var(--white);
+      border-radius: 10px;
+      margin-bottom: .8rem;
+      border-left: 5px solid var(--red);
+    }
+
+    .contact-faq summary {
+      cursor: pointer;
+      padding: 1rem 1.2rem;
+      font-weight: 600;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .contact-faq summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .contact-faq summary::after {
+      content: "+";
+      color: var(--red);
+      font-size: 1.4rem;
+    }
+
+    .contact-faq details[open] summary::after {
+      content: "–";
+    }
+
+    .contact-faq details p {
+      padding: 0 1.2rem 1.1rem;
+      margin: 0;
+    }
+
+
+    /* =========================================
+       CTA
+    ========================================= */
+
+    .contact-cta {
+      background: var(--red);
+      color: var(--white);
+      text-align: center;
+      padding-block: 4.5rem;
+    }
+
+    .contact-cta h2 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      margin-bottom: .5rem;
+    }
+
+    .contact-cta p {
+      margin-bottom: 1.5rem;
+    }
+
+
+    /* =========================================
+       RESPONSIVE
+    ========================================= */
+
+    @media (max-width: 1000px) {
+
+      .quick-grid,
+      .benefits-grid,
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .contact-services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+    }
+
+
+    @media (max-width: 800px) {
+
+      .contact-grid,
+      .hours-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-hero {
+        min-height: 360px;
+      }
+
+    }
+
+
+    @media (max-width: 600px) {
+
+      .quick-grid,
+      .benefits-grid,
+      .process-grid,
+      .contact-services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .quick-contact {
+        margin-top: -30px;
+      }
+
+      .contact-info,
+      .contact-form-box {
+        padding: 1.5rem;
+      }
+
+      .contact-hero h1 {
+        font-size: 2.6rem;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     HEADER
+========================================= -->
+
+<header class="site-header" id="header">
+
+  <div class="container nav-wrap">
+
+    <a href="index.html"
+       class="brand"
+       aria-label="Smart Marketing & Events home">
+
+      <img src="images/logo.png"
+           alt="Smart Marketing & Events logo"
+           class="brand-logo">
+
+      <span class="brand-name">
+        Smart Marketing &amp; Events
+      </span>
+
+    </a>
+
+
+    <button
+      class="menu-toggle"
+      id="menuToggle"
+      aria-label="Open menu"
+      aria-expanded="false">
+
+      <span></span>
+      <span></span>
+      <span></span>
+
+    </button>
+
+
+    <nav class="nav" id="nav" aria-label="Main">
+
+      <a href="index.html">Home</a>
+
+      <a href="about.html">About Us</a>
+
+      <a href="services.html">Services</a>
+
+      <a href="gallery.html">Gallery</a>
+
+      <a href="clients.html">Clients</a>
+
+      <a href="contact.html" class="active">Contact Us</a>
+
+      <a href="contact.html"
+         class="btn btn-light nav-cta">
+        Book an Event
+      </a>
+
+    </nav>
+
+  </div>
+
+</header>
+
+
+<main>
+
+
+<!-- =========================================
+     HERO
+========================================= -->
+
+
+<!-- Banner -->
+  <section class="hero" style="background-image:url('images/banner.jpg')">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <h1>Large Format Printing Done Here</h1>
+      <p>Sign boards, brandings and event graphics for brands across Chennai. 13 years of experience.</p>
+      <div class="hero-actions">
+        <a href="contact.html" class="btn btn-red">Book an Event</a>
+        <a href="services.html" class="btn btn-outline">See our services</a>
+      </div>
+    </div>
+  </section>
+
+
+<!-- =========================================
+     QUICK CONTACT
+========================================= -->
+
+<section class="quick-contact">
+
+  <div class="container quick-grid">
+
+    <div class="quick-card">
+
+      <div class="icon">📞</div>
+
+      <h3>Call Us</h3>
+
+      <p>
+        <a href="tel:+919790738393">
+          +91 97907 38393
+        </a>
+      </p>
+
+    </div>
+
+
+    <div class="quick-card">
+
+      <div class="icon">💬</div>
+
+      <h3>WhatsApp</h3>
+
+      <p>
+        <a href="https://wa.me/918668074545"
+           target="_blank"
+           rel="noopener">
+          Chat With Us
+        </a>
+      </p>
+
+    </div>
+
+
+    <div class="quick-card">
+
+      <div class="icon">✉</div>
+
+      <h3>Email</h3>
+
+      <p>
+        <a href="mailto:smartmarketingchennai@gmail.com">
+          Send Email
+        </a>
+      </p>
+
+    </div>
+
+
+    <div class="quick-card">
+
+      <div class="icon">📍</div>
+
+      <h3>Visit Us</h3>
+
+      <p>
+        Velachery, Chennai
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     CONTACT FORM + DETAILS
+========================================= -->
+
+<section class="contact-section">
+
+  <div class="container contact-grid">
+
+
+    <!-- INFORMATION -->
+
+    <div class="contact-info">
+
+      <h2>Get In Touch</h2>
+
+      <p class="contact-info-intro">
+        Whether you need a new sign board, large format
+        printing, branding for your business or complete
+        event branding, our team is ready to help.
+      </p>
+
+
+      <div class="contact-item">
+
+        <div class="contact-icon">📍</div>
+
+        <div>
+
+          <h3>Office</h3>
+
+          <p>
+            Smart Marketing &amp; Events<br>
+            Velachery, Chennai – 600 042
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="contact-item">
+
+        <div class="contact-icon">☎</div>
+
+        <div>
+
+          <h3>Phone</h3>
+
+          <p>
+
+            <a href="tel:+914447917507">
+              044 4791 7507
+            </a>
+
+            <br>
+
+            <a href="tel:+919790738393">
+              +91 97907 38393
+            </a>
+
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="contact-item">
+
+        <div class="contact-icon">💬</div>
+
+        <div>
+
+          <h3>WhatsApp</h3>
+
+          <p>
+
+            <a href="https://wa.me/918668074545"
+               target="_blank"
+               rel="noopener">
+
+              +91 86680 74545
+
+            </a>
+
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="contact-item">
+
+        <div class="contact-icon">✉</div>
+
+        <div>
+
+          <h3>Email</h3>
+
+          <p>
+
+            <a href="mailto:smartmarketingchennai@gmail.com">
+
+              smartmarketingchennai@gmail.com
+
+            </a>
+
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="whatsapp-box">
+
+        <h3>Need a quick response?</h3>
+
+        <p>
+          Send your requirements directly on WhatsApp
+          and our team can discuss your project.
+        </p>
+
+        <a
+          href="https://wa.me/918668074545"
+          target="_blank"
+          rel="noopener"
+          class="btn btn-light">
+
+          Chat on WhatsApp
+
+        </a>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- FORM -->
+
+    <div class="contact-form-box">
+
+      <h2>Request a Free Quote</h2>
+
+      <p>
+        Fill in the details below. We will contact you
+        with the next steps for your project.
+      </p>
+
+
+      <form class="contact-form" id="contactForm">
+
+
+        <div class="form-row">
+
+          <label>
+
+            Your Name
+
+            <input
+              type="text"
+              name="name"
+              placeholder="Enter your name"
+              required
+              autocomplete="name">
+
+          </label>
+
+
+          <label>
+
+            Phone Number
+
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Enter your phone number"
+              required
+              autocomplete="tel">
+
+          </label>
+
+        </div>
+
+
+        <label>
+
+          Email Address
+
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter your email">
+
+        </label>
+
+
+        <label>
+
+          Service Required
+
+          <select name="service" required>
+
+            <option value="">
+              Select a service
+            </option>
+
+            <option>Large Format Printing</option>
+            <option>Glow Sign Board</option>
+            <option>LED Sign Board</option>
+            <option>ACP Board</option>
+            <option>Flex Printing</option>
+            <option>Fabric Printing</option>
+            <option>Vinyl Sticker</option>
+            <option>One Way Vision</option>
+            <option>Poster Film</option>
+            <option>Framing Work</option>
+            <option>Fabrication Work</option>
+            <option>Event Branding</option>
+            <option>Other</option>
+
+          </select>
+
+        </label>
+
+
+        <div class="form-row">
+
+          <label>
+
+            Project Location
+
+            <input
+              type="text"
+              name="location"
+              placeholder="Example: Velachery">
+
+          </label>
+
+
+          <label>
+
+            Required Date
+
+            <input
+              type="date"
+              name="date">
+
+          </label>
+
+        </div>
+
+
+        <label>
+
+          Project Details
+
+          <textarea
+            name="details"
+            placeholder="Tell us about your size, quantity, design, location and requirements..."></textarea>
+
+        </label>
+
+
+        <button
+          type="submit"
+          class="btn btn-red">
+
+          Send Enquiry on WhatsApp
+
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     WHY CONTACT US
+========================================= -->
+
+<section class="contact-benefits">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      Why Work With Smart Marketing &amp; Events?
+    </h2>
+
+
+    <div class="benefits-grid">
+
+      <div class="benefit-card">
+
+        <h3>Complete Solutions</h3>
+
+        <p>
+          From design and printing to fabrication and
+          installation, your project can be handled by one team.
+        </p>
+
+      </div>
+
+
+      <div class="benefit-card">
+
+        <h3>Quality Printing</h3>
+
+        <p>
+          We provide large format printing for branding,
+          signage, buildings, shops, vehicles and events.
+        </p>
+
+      </div>
+
+
+      <div class="benefit-card">
+
+        <h3>On-Site Installation</h3>
+
+        <p>
+          Our team can handle installation and finishing
+          at your location.
+        </p>
+
+      </div>
+
+
+      <div class="benefit-card">
+
+        <h3>Event Branding</h3>
+
+        <p>
+          We support store openings, launches, exhibitions,
+          stages, entry arches and event displays.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+<!-- =========================================
+     HOW IT WORKS
+========================================= -->
+
+<section class="contact-process">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      How We Handle Your Enquiry
+    </h2>
+
+
+    <div class="process-grid">
+
+
+      <div class="process-card">
+
+        <div class="process-number">1</div>
+
+        <h3>Share Your Requirement</h3>
+
+        <p>
+          Tell us the type of work, size, quantity,
+          location and expected date.
+        </p>
+
+      </div>
+
+
+      <div class="process-card">
+
+        <div class="process-number">2</div>
+
+        <h3>Discuss &amp; Plan</h3>
+
+        <p>
+          Our team discusses the requirement and
+          understands your project.
+        </p>
+
+      </div>
+
+
+      <div class="process-card">
+
+        <div class="process-number">3</div>
+
+        <h3>Design &amp; Quote</h3>
+
+        <p>
+          We prepare the required design and provide
+          the project pricing and timeline.
+        </p>
+
+      </div>
+
+
+      <div class="process-card">
+
+        <div class="process-number">4</div>
+
+        <h3>Production &amp; Installation</h3>
+
+        <p>
+          Once approved, the work moves to production,
+          fabrication and installation.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     SERVICE AREAS
+========================================= -->
+
+<section class="service-areas">
+
+  <div class="container">
+
+    <div class="areas-box">
+
+      <h2 class="section-title">
+        Areas We Serve
+      </h2>
+
+      <p>
+        We provide printing, signage, branding and event
+        solutions across Chennai and can discuss projects
+        outside Chennai as well.
+      </p>
+
+
+      <div class="areas-list">
+
+        <span>Velachery</span>
+        <span>Guindy</span>
+        <span>Adambakkam</span>
+        <span>Perungudi</span>
+        <span>Tharamani</span>
+        <span>Adyar</span>
+        <span>OMR</span>
+        <span>Medavakkam</span>
+        <span>Sholinganallur</span>
+        <span>Tambaram</span>
+        <span>Porur</span>
+        <span>Chennai</span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     BUSINESS HOURS
+========================================= -->
+
+<section class="hours-section">
+
+  <div class="container hours-grid">
+
+
+    <div class="hours-card">
+
+      <h2>Business Information</h2>
+
+      <p>
+        <strong>Smart Marketing &amp; Events</strong>
+      </p>
+
+      <p>
+        Velachery, Chennai – 600 042
+      </p>
+
+      <p>
+        Phone:
+        <a href="tel:+914447917507">
+          044 4791 7507
+        </a>
+      </p>
+
+      <p>
+        WhatsApp:
+        <a href="https://wa.me/918668074545">
+          +91 86680 74545
+        </a>
+      </p>
+
+      <p>
+        Email:
+        <a href="mailto:smartmarketingchennai@gmail.com">
+          smartmarketingchennai@gmail.com
+        </a>
+      </p>
+
+    </div>
+
+
+    <div class="hours-card">
+
+      <h2>When You Contact Us</h2>
+
+      <div class="hours-row">
+
+        <span>General Enquiries</span>
+
+        <strong>Call / WhatsApp</strong>
+
+      </div>
+
+
+      <div class="hours-row">
+
+        <span>Project Quote</span>
+
+        <strong>Send Requirements</strong>
+
+      </div>
+
+
+      <div class="hours-row">
+
+        <span>Site Requirement</span>
+
+        <strong>Share Location</strong>
+
+      </div>
+
+
+      <div class="hours-row">
+
+        <span>Event Booking</span>
+
+        <strong>Plan in Advance</strong>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     MAP
+========================================= -->
+
+<section class="map-section">
+
+  <div class="container">
+
+    <h2 class="section-title">
+      Find Our Office
+    </h2>
+
+    <div class="map-container">
+
+      <iframe
+        title="Smart Marketing & Events location"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=Velachery,+Chennai+600042&output=embed">
+      </iframe>
+
+    </div>
+
+
+    <div style="text-align:center;margin-top:1.5rem;">
+
+      <a
+        class="btn btn-red"
+        href="https://www.google.com/maps/search/?api=1&query=Velachery+Chennai+600042"
+        target="_blank"
+        rel="noopener">
+
+        Get Directions
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     FAQ
+========================================= -->
+
+<section class="contact-faq">
+
+  <div class="container contact-faq-wrap">
+
+    <h2 class="section-title">
+      Frequently Asked Questions
+    </h2>
+
+
+    <div class="contact-faq">
+
+
+      <details>
+
+        <summary>
+          How can I request a quotation?
+        </summary>
+
+        <p>
+          Fill in the enquiry form on this page or send
+          your requirement directly through WhatsApp.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          What information should I provide?
+        </summary>
+
+        <p>
+          Share the type of service, approximate size,
+          quantity, location and required date. You can
+          also share your design or reference images.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          Do you provide installation?
+        </summary>
+
+        <p>
+          Yes. Installation can be arranged for signage,
+          boards, branding and related projects.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          Can you work with our existing design?
+        </summary>
+
+        <p>
+          Yes. You can share your existing artwork or
+          design files for the project.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          Do you handle event branding?
+        </summary>
+
+        <p>
+          Yes. Event services include stage backdrops,
+          standees, entry arches, exhibition stalls,
+          sandwich boards and launch branding.
+        </p>
+
+      </details>
+
+
+      <details>
+
+        <summary>
+          Do you take projects outside Chennai?
+        </summary>
+
+        <p>
+          Projects outside Chennai can be discussed based
+          on the location and project requirements.
+        </p>
+
+      </details>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================
+     FINAL CTA
+========================================= -->
+
+<section class="contact-cta">
+
+  <div class="container">
+
+    <h2>
+      Ready to Start Your Project?
+    </h2>
+
+    <p>
+      Send us your requirement and let's discuss
+      the right solution for your business or event.
+    </p>
+
+
+    <a
+      href="https://wa.me/918668074545"
+      target="_blank"
+      rel="noopener"
+      class="btn btn-light">
+
+      Start a WhatsApp Conversation
+
+    </a>
+
+
+    <a
+      href="tel:+919790738393"
+      class="btn btn-outline"
+      style="margin-left:.5rem;">
+
+      Call Us
+
+    </a>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer class="site-footer">
+
+  <div class="container footer-grid">
+
+
+    <div>
+
+      <img
+        src="images/logo.png"
+        alt="Smart Marketing & Events"
+        class="footer-logo">
+
+      <p>
+        Founder: Praveen Devaraj<br>
+        GSTIN: 33CABPP3282J1ZN
+      </p>
+
+    </div>
+
+
+    <div>
+
+      <h3>Contact</h3>
+
+      <p>
+
+        <a href="tel:+914447917507">
+          044 4791 7507
+        </a>
+
+        <br>
+
+        <a href="tel:+919790738393">
+          +91 97907 38393
+        </a>
+
+        <br>
+
+        <a href="https://wa.me/918668074545"
+           target="_blank"
+           rel="noopener">
+
+          WhatsApp +91 86680 74545
+
+        </a>
+
+        <br>
+
+        <a href="mailto:smartmarketingchennai@gmail.com">
+          smartmarketingchennai@gmail.com
+        </a>
+
+      </p>
+
+    </div>
+
+
+    <div>
+
+      <h3>Visit</h3>
+
+      <p>
+        Velachery, Chennai – 600 042
+      </p>
+
+    </div>
+
+
+  </div>
+
+
+  <p class="copy">
+
+    © <span id="year"></span>
+    Smart Marketing &amp; Events.
+    All rights reserved.
+
+  </p>
+
+</footer>
+
+
+
+<!-- FLOATING WHATSAPP -->
+
+<a
+  href="https://wa.me/918668074545"
+  class="wa-float"
+  target="_blank"
+  rel="noopener"
+  aria-label="Chat on WhatsApp">
+
+  WhatsApp
+
+</a>
+
+
+
+<script src="js/contact.js"></script>
+
+</body>
+</html>

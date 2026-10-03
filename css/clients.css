@@ -1,0 +1,48 @@
+/* ---------- Clients page (loads after style.css) ---------- */
+.marquee-2{margin-top:1rem}
+.marquee-track.reverse{animation-direction:reverse;animation-duration:42s}
+
+.clients-list{position:relative;overflow:hidden}
+.clients-list .container{position:relative;z-index:1}
+.blob{position:absolute;border-radius:50%;background:var(--red);opacity:.08;filter:blur(2px);animation:blob 14s ease-in-out infinite}
+.blob-a{width:420px;height:420px;top:6%;right:-120px}
+.blob-b{width:320px;height:320px;bottom:8%;left:-100px;animation-delay:-6s}
+@keyframes blob{50%{transform:translate(-30px,30px) scale(1.12)}}
+
+/* Row: content left, logo right */
+.client-row{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center;padding-block:2.4rem;border-bottom:1px solid var(--pink-deep)}
+.client-row:last-child{border-bottom:0}
+.client-text{order:1}
+.client-logo-wrap{order:2;display:grid;place-items:center;perspective:900px}
+.client-num{display:inline-block;font-weight:800;color:var(--red);letter-spacing:.08em;margin-right:.6rem}
+.client-tag{display:inline-block;background:var(--red);color:var(--white);font-size:.8rem;font-weight:600;padding:.2rem .7rem;border-radius:999px;margin-bottom:.5rem}
+.client-text h3{font-size:clamp(1.6rem,3.2vw,2.3rem);color:var(--red);margin-bottom:.6rem}
+
+/* Logo card: rotating ring, float, shine, tilt */
+.client-logo{position:relative;width:min(100%,340px);aspect-ratio:3/2;display:grid;place-items:center;padding:2rem;border-radius:20px;background:var(--white);box-shadow:0 14px 34px rgba(120,30,25,.22);isolation:isolate;overflow:hidden;
+  transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .15s ease-out,box-shadow .3s;animation:floaty 5s ease-in-out infinite}
+.client-logo::before{content:"";position:absolute;inset:-60%;z-index:-2;background:conic-gradient(from 0deg,var(--red),var(--pink-deep),var(--red-dark),var(--pink),var(--red));animation:spin 7s linear infinite}
+.client-logo::after{content:"";position:absolute;inset:4px;z-index:-1;border-radius:17px;background:var(--white)}
+.client-logo img{max-width:100%;max-height:100%;object-fit:contain;transition:transform .4s}
+.client-logo:hover{box-shadow:0 20px 44px rgba(120,30,25,.35)}
+.client-logo:hover img{transform:scale(1.08)}
+.shine{position:absolute;inset:0;z-index:1;background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.75) 50%,transparent 60%);transform:translateX(-120%);pointer-events:none}
+.client-logo:hover .shine{animation:shine .9s}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes floaty{50%{translate:0 -10px}}
+@keyframes shine{to{transform:translateX(120%)}}
+
+/* Scroll entry: text slides from left, logo pops in from right */
+.c-reveal .client-text{opacity:0;transform:translateX(-50px);transition:opacity .7s,transform .7s}
+.c-reveal .client-logo-wrap{opacity:0;transform:translateX(60px) scale(.8) rotate(-6deg);transition:opacity .8s .15s,transform .8s .15s cubic-bezier(.2,1.2,.4,1)}
+.c-reveal.in .client-text,.c-reveal.in .client-logo-wrap{opacity:1;transform:none}
+
+@media (max-width:800px){
+  .client-row{grid-template-columns:1fr;gap:1.6rem}
+  .client-logo-wrap{order:-1}
+  .client-logo{width:min(100%,280px)}
+}
+@media (prefers-reduced-motion:reduce){
+  .blob,.client-logo,.client-logo::before{animation:none}
+  .c-reveal .client-text,.c-reveal .client-logo-wrap{opacity:1;transform:none;transition:none}
+}

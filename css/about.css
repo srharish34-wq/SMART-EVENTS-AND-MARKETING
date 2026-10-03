@@ -1,0 +1,101 @@
+/* About page only. Loaded after css/style.css. Uses the same design tokens. */
+:root{
+--red:#d63a2f;
+--red-dark:#b82c23;
+--pink:#fce4e4;
+--pink-deep:#f8d0cf;
+--ink:#3a1512;
+--white:#fff;
+--radius:10px;
+}
+body{overflow-x:hidden}
+main{overflow-x:clip}
+
+/* Hero */
+.about-hero h1{max-width:14ch}
+
+/* Section layout fixes */
+.section p{max-width:60ch}
+.split>*{min-width:0}
+
+/* Icons */
+.ico{display:inline-grid;place-items:center;width:3rem;height:3rem;border-radius:50%;background:var(--pink);color:var(--red);margin-bottom:.9rem}
+.ico svg{width:1.5rem;height:1.5rem}
+
+/* Mission / Vision */
+.mv-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem}
+.mv-card{background:var(--white);border-top:5px solid var(--red);border-radius:var(--radius);padding:2rem}
+.mv-card h3{color:var(--red);font-size:1.4rem;margin-bottom:.5rem}
+.mv-card p{margin:0}
+
+/* What we do */
+.do-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.do-card{background:var(--white);border-top:5px solid var(--red);border-radius:var(--radius);padding:1.5rem;transition:transform .2s,box-shadow .2s}
+.do-card:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(120,30,25,.25)}
+.do-card h3{color:var(--red);font-size:1.15rem;margin-bottom:.4rem}
+.do-card p{margin:0;font-size:.97rem}
+
+/* Why choose */
+.section-red .why-grid{grid-template-columns:repeat(4,1fr)}
+.why-grid p{margin:0;max-width:none}
+
+/* Process */
+.process{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem}
+.process li{background:var(--white);border-radius:var(--radius);padding:1.4rem;position:relative}
+.process .num{display:grid;place-items:center;width:3rem;height:3rem;border-radius:50%;background:var(--red);color:var(--white);font-weight:700;margin-bottom:.8rem}
+.process h3{color:var(--red);margin-bottom:.2rem}
+.process p{margin:0;font-size:.97rem}
+
+/* Industries: base styles come from style.css */
+.industries li{list-style:none}
+
+/* Highlights */
+.stats-grid{grid-template-columns:repeat(4,1fr);align-items:start}
+.stats-grid li{background:var(--white);border-bottom:5px solid var(--red);border-radius:var(--radius);padding:1.6rem 1rem}
+.stats-grid li span{display:block}
+.stats strong.stat-text{font-size:clamp(1.9rem,4vw,2.8rem);padding-block:.3rem}
+.stats strong .count{display:inline;font-weight:800;color:var(--red)}
+
+/* Founder */
+.founder-visual{aspect-ratio:4/3;border-radius:14px;background:var(--red);display:grid;place-items:center;box-shadow:0 12px 30px rgba(120,30,25,.22)}
+.founder-visual span{font-size:clamp(4rem,12vw,7rem);font-weight:800;color:var(--white);letter-spacing:.04em}
+.founder-name{font-size:1.5rem;color:var(--ink);margin-bottom:.8rem}
+
+/* CTA */
+.cta-actions{justify-content:center}
+.cta p{max-width:52ch}
+
+/* Scroll reveal (only active when JS adds .js-reveal) */
+.js-reveal .reveal{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease}
+.js-reveal .reveal.in{opacity:1;transform:none}
+.do-card.reveal.in:hover{transform:translateY(-4px)}
+
+/* Tablet */
+@media (max-width:1000px){
+.do-grid{grid-template-columns:repeat(2,1fr)}
+.section-red .why-grid{grid-template-columns:repeat(2,1fr)}
+.process{grid-template-columns:repeat(2,1fr)}
+.stats-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+/* Mobile */
+@media (max-width:800px){
+.mv-grid{grid-template-columns:1fr}
+.split .split-img,.split .founder-visual{order:-1}
+}
+@media (max-width:600px){
+.section{padding-block:3rem}
+.do-grid,.process,.section-red .why-grid{grid-template-columns:1fr}
+.stats-grid{grid-template-columns:1fr 1fr;gap:1rem}
+.hero-actions .btn,.cta-actions .btn,.split .btn{width:100%;text-align:center;padding-block:.85rem}
+.mv-card{padding:1.5rem}
+}
+@media (max-width:360px){
+body{font-size:16px}
+.stats-grid{grid-template-columns:1fr}
+}
+
+@media (prefers-reduced-motion:reduce){
+.js-reveal .reveal{opacity:1;transform:none;transition:none}
+.do-card{transition:none}
+}
