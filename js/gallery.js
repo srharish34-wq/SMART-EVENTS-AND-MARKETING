@@ -285,7 +285,6 @@ const galleryData = {
      category: "client", 
      folder: "images/Victorinox/",
      images: [
-      images: [
   "img4.jpg",
   "img5.jpg",
   "img8.jpg",
@@ -298,7 +297,6 @@ const galleryData = {
   "img21.jpg",
   "img22.jpg",
   "img29.jpg"
-]
        ] },
 
   "Way-cool":               
@@ -306,7 +304,6 @@ const galleryData = {
     category: "client", 
     folder: "images/Way cool/",
     images: [
-     images: [
   "img3.jpg",
   "img4.jpg",
   "img6.jpg",
@@ -323,7 +320,6 @@ const galleryData = {
   "img26.jpg",
   "img27.jpg",
   "img29.jpg"
-]
 
         ] },
 
