@@ -304,3 +304,73 @@ document.getElementById('year').textContent = new Date().getFullYear();
 
   live(); render();
 })();
+
+// Our journey: flip calendar, timeline print-in, print head
+(function(){
+  const items = [...document.querySelectorAll('.jr-item')];
+  const track = document.getElementById('jrTrack');
+  if(!items.length || !track) return;
+
+  const calPage = document.getElementById('calPage');
+  const calYear = document.getElementById('calYear');
+  const calLabel = document.getElementById('calLabel');
+  const calGrid = document.getElementById('calGrid');
+  const calCount = document.getElementById('calCount');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const thisYear = String(new Date().getFullYear());
+
+  // Calendar grid: one square per chapter
+  items.forEach((_, i) => {
+    const s = document.createElement('span');
+    s.textContent = i + 1;
+    calGrid.appendChild(s);
+  });
+  const cells = [...calGrid.children];
+
+  let current = -1;
+  function setActive(i){
+    if(i === current) return;
+    const first = current === -1;
+    current = i;
+    items.forEach((it, k) => it.classList.toggle('active', k === i));
+    cells.forEach((c, k) => {
+      c.classList.toggle('done', k < i);
+      c.classList.toggle('now', k === i);
+    });
+    calCount.textContent = `Chapter ${i + 1} of ${items.length}`;
+
+    const y = items[i].dataset.year === 'now' ? thisYear : items[i].dataset.year;
+    const l = items[i].dataset.label;
+    const swap = () => { calYear.textContent = y; calLabel.textContent = l; };
+
+    if(reduce || first){ swap(); return; }
+    calPage.classList.remove('flip');
+    void calPage.offsetWidth;            // restart the animation
+    calPage.classList.add('flip');
+    setTimeout(swap, 260);               // change the page when it is edge-on
+  }
+
+  // Cards print in when they scroll into view
+  const reveal = new IntersectionObserver(entries => entries.forEach(e => {
+    if(e.isIntersecting){ e.target.classList.add('in'); reveal.unobserve(e.target); }
+  }), { threshold: .25 });
+  items.forEach(it => reveal.observe(it));
+  document.querySelectorAll('.jr-end').forEach(el => reveal.observe(el));
+
+  // The card in the middle of the screen is the active chapter
+  const act = new IntersectionObserver(entries => entries.forEach(e => {
+    if(e.isIntersecting) setActive(items.indexOf(e.target));
+  }), { rootMargin: '-45% 0px -45% 0px' });
+  items.forEach(it => act.observe(it));
+
+  // Print head moves down the line as you scroll
+  function progress(){
+    const r = track.getBoundingClientRect();
+    const p = Math.min(1, Math.max(0, (innerHeight * .5 - r.top) / r.height));
+    track.style.setProperty('--p', p);
+  }
+  addEventListener('scroll', progress, { passive: true });
+  addEventListener('resize', progress);
+  progress();
+  setActive(0);
+})();
