@@ -1,0 +1,5 @@
+
+User-agent: *
+Allow: /
+
+Sitemap: https://smartmarketingandevents.in/sitemap.xml
